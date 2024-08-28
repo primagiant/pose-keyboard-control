@@ -11,7 +11,7 @@ This application is for controlling game that using WASD as an input in keyboard
 ### How To Install
 
 #### Download the Project
-- `git clone https://github.com/primagiant/hand-angle-mouse-control.git`
+- `git clone git@github.com:primagiant/pose-keyboard-control.git`
 - `cd hand-angle-mouse-control`
 
 #### Make the python Environment

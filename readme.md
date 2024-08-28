@@ -12,7 +12,7 @@ This application is for controlling game that using WASD as an input in keyboard
 
 #### Download the Project
 - `git clone git@github.com:primagiant/pose-keyboard-control.git`
-- `cd hand-angle-mouse-control`
+- `cd pose-keyboard-control`
 
 #### Make the python Environment
 - `python -m venv .venv`

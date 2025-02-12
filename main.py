@@ -6,7 +6,7 @@ import cv2
 import mediapipe as mp
 
 from model.pose_classifier_with_angle import PoseClassifierWithAngle
-from utils.keyboard_controls import PressKey, ReleaseKey
+from utils.pynput_control import PressKey, ReleaseKey
 
 class_name = ['l-down', 'l-left', 'l-right', 'l-up', 'left', 'overhead', 'right', 'stand-up', 't-pose']
 

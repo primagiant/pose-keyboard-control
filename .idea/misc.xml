@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (pose-game-control-model)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (pose-game-control-model)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="$USER_HOME$/Code/miniconda3/envs/pose-env" project-jdk-type="Python SDK" />
 </project>

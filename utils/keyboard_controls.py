@@ -31,7 +31,7 @@ class MouseInput(ctypes.Structure):
 class Input_I(ctypes.Union):
     _fields_ = [("ki", KeyBdInput),
                 ("mi", MouseInput),
-                ("hi", HardwareInput)]
+                ("hi", HardwareInpt)]
 
 
 class Input(ctypes.Structure):

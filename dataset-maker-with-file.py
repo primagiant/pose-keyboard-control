@@ -29,33 +29,6 @@ def main():
     print("Completed")
 
 
-def logging_csv(number, mode, landmark_list):
-    if mode == 0:
-        pass
-    if mode == 1 and (0 <= number <= 9):
-        csv_path = 'model/dataset.csv'
-        with open(csv_path, 'a', newline="") as f:
-            writer = csv.writer(f)
-            writer.writerow([number, *landmark_list])
-    return
-
-
-def draw_info(image, mode, number):
-    mode_string = ['Normal', 'Pengumpulan Dataset']
-    if mode == 0:
-        cv2.putText(image, "MODE:" + mode_string[mode], (10, 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1,
-                    cv2.LINE_AA)
-    if mode == 1:
-        cv2.putText(image, "MODE:" + mode_string[mode], (10, 30),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1,
-                    cv2.LINE_AA)
-        if 0 <= number <= 9:
-            cv2.putText(image, "NUM:" + str(number), (10, 60),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 1,
-                        cv2.LINE_AA)
-    return image
-
 
 def get_bounding_box(landmarks):
     if landmarks.size == 0:
@@ -65,13 +38,6 @@ def get_bounding_box(landmarks):
     x_min, x_max = x_coords.min(), x_coords.max()
     y_min, y_max = y_coords.min(), y_coords.max()
     return x_min, y_min, x_max, y_max
-
-
-def draw_bounding_box(image, bbox):
-    if bbox is not None:
-        x_min, y_min, x_max, y_max = bbox
-        h, w, _ = image.shape
-        cv2.rectangle(image, (int(x_min * w), int(y_min * h)), (int(x_max * w), int(y_max * h)), (0, 255, 0), 2)
 
 
 def normalize_bounding_box(bbox, image_shape):
@@ -88,7 +54,6 @@ def get_landmarks(image, poses):
 
     # get x_min, y_min, x_max, y_max
     bbox = get_bounding_box(np.array([[landmark.x, landmark.y] for landmark in landmarks]))
-    draw_bounding_box(image, bbox)
 
     xmin = int(bbox[0] * frame_width)
     ymin = int(bbox[1] * frame_height)
